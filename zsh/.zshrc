@@ -22,6 +22,8 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+EDITOR='nvim'
+
 # Path to your Java installation
 export JAVA_HOME="/opt/homebrew/Cellar/openjdk/21.0.3"
 export PATH="$JAVA_HOME/bin:$PATH"
@@ -82,6 +84,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+
+# thefuck alias
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
+# ----- Bat (better cat) -----
+export BAT_THEME=tokyonight_night
 
 # Shell integrations
 eval "$(fzf --zsh)"
