@@ -9,7 +9,7 @@ export OSH='/Users/mikesadowski/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="powerline-multiline"
+OSH_THEME="powerbash10k"
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
