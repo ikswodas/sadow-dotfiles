@@ -84,6 +84,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias vim='nvim'
 
 # thefuck alias
 eval $(thefuck --alias)
