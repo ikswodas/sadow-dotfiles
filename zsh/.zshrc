@@ -83,8 +83,19 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
+# Normal aliases
 alias ls='ls --color'
 alias vim='nvim'
+
+# Git aliases
+alias gt="git"
+alias ga="git add ."
+alias gs="git status -s"
+alias gc='git commit -m'
+alias glog='git log --oneline --graph --all'
+
+# Lazygit
+alias lg="lazygit"
 
 # thefuck alias
 eval $(thefuck --alias)
