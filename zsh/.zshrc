@@ -84,8 +84,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 # Normal aliases
-alias ls='ls --color'
+alias ls='eza'
+alias ll='eza -al'
+
+alias c='clear'
+
 alias vim='nvim'
+alias grep='grep --color'
 
 # Git aliases
 alias gt="git"
