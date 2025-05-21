@@ -29,15 +29,12 @@ return {
 			ensure_installed = {
 				"html",
 				"clangd",
-				"cssls",
-				"tailwindcss",
-				"svelte",
 				"lua_ls",
-				"graphql",
-				"emmet_ls",
-				"prismals",
 				"pyright",
 				"kotlin_language_server",
+				"jdtls", -- Java language server with more features
+				"gradle_ls", -- For Gradle build files
+				"lemminx", -- For XML files (common in Java projects)
 			},
 		})
 
@@ -49,6 +46,8 @@ return {
 				"black", -- python formatter
 				"eslint_d",
 				"ktlint", -- kotlin formatter
+				"google-java-format", -- Java formatter
+				"checkstyle", -- Java code quality checker
 			},
 		})
 	end,
