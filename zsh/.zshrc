@@ -5,9 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+# Only use Homebrew Java if SDKMAN isn't active
+if [[ -z "$SDKMAN_DIR" ]]; then
+  export JAVA_HOME="/opt/homebrew/opt/openjdk"
+  export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
 # Set the directory we want to store zinit and plugins
@@ -24,9 +25,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 EDITOR='nvim'
 
-# Path to your Java installation
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk/21.0.3"
-export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Add in Powerlevel10k
@@ -86,6 +84,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Normal aliases
 alias ls='eza'
 alias ll='eza -al'
+alias lt='eza --tree'
+alias lta='eza -a --tree'
 
 alias c='clear'
 
