@@ -37,6 +37,7 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
+				"kotlin_language_server",
 			},
 		})
 
@@ -44,8 +45,10 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
+				"isort", -- python formatter
 				"black", -- python formatter
 				"eslint_d",
+				"ktlint", -- kotlin formatter
 			},
 		})
 	end,
