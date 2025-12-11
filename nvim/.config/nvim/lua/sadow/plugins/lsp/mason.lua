@@ -27,14 +27,14 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"html",
-				"clangd",
-				"lua_ls",
-				"pyright",
+				"html", -- For HTML projects
+				"clangd", -- For C Projects
+				"lua_ls", -- For Lua projects
+				"pyright", -- For Python projects
 				"kotlin_language_server",
 				"jdtls", -- Java language server with more features
 				"gradle_ls", -- For Gradle build files
-				"lemminx", -- For XML files (common in Java projects)
+				"lemminx", -- For XML files
 			},
 		})
 
@@ -48,6 +48,7 @@ return {
 				"ktlint", -- kotlin formatter
 				"google-java-format", -- Java formatter
 				"checkstyle", -- Java code quality checker
+				"pylint",
 			},
 		})
 	end,
