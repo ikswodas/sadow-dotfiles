@@ -13,6 +13,9 @@ window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 
+window-width=169
+window-height=53
+
 auto-update = check
 
 # Custom Keybinds & Config (super represents cmd key on mac)
