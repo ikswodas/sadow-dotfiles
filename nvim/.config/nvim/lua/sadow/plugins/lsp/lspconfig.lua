@@ -90,6 +90,24 @@ return {
 			},
 		})
 
+		vim.lsp.config("yamlls", {
+			settings = {
+				yaml = {
+					schemaStore = { enable = false, url = "" },
+					schemas = require("schemastore").yaml.schemas(),
+				},
+			},
+		})
+
+		vim.lsp.config("jsonls", {
+			settings = {
+				json = {
+					schemas = require("schemastore").json.schemas(),
+					validate = { enable = true },
+				},
+			},
+		})
+
 		vim.lsp.config("kotlin_language_server", {
 			settings = {
 				kotlin = {
@@ -101,6 +119,6 @@ return {
 		})
 
 		-- Enable all servers (jdtls excluded — handled by nvim-jdtls)
-		vim.lsp.enable({ "html", "clangd", "lua_ls", "pyright", "kotlin_language_server", "gradle_ls", "lemminx" })
+		vim.lsp.enable({ "html", "clangd", "lua_ls", "pyright", "kotlin_language_server", "gradle_ls", "lemminx", "vtsls", "tailwindcss", "jsonls", "yamlls", "bashls", "sqls" })
 	end,
 }

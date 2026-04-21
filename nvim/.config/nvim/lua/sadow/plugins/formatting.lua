@@ -22,6 +22,8 @@ return {
 				python = { "isort", "black" },
 				kotlin = { "ktlint" },
 			java = { "google-java-format" },
+			sh = { "shfmt" },
+			sql = { "sqlfluff" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

@@ -35,6 +35,12 @@ return {
 				"jdtls", -- Java language server with more features
 				"gradle_ls", -- For Gradle build files
 				"lemminx", -- For XML files
+				"vtsls", -- TypeScript/JavaScript LSP
+				"tailwindcss", -- Tailwind/NativeWind
+				"jsonls", -- JSON/JSONC with schema support
+				"yamlls", -- YAML with GitHub Actions schema support
+				"bashls", -- Bash LSP
+				"sqls", -- SQL LSP
 			},
 		})
 
@@ -49,6 +55,9 @@ return {
 				"google-java-format", -- Java formatter
 				"checkstyle", -- Java code quality checker
 				"pylint",
+				"shellcheck", -- Bash linter
+				"shfmt", -- Bash formatter
+				"sqlfluff", -- SQL linter/formatter (use --dialect postgres)
 			},
 		})
 	end,
