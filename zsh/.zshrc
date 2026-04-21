@@ -5,8 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Only use Homebrew Java if SDKMAN isn't active
-if [[ -z "$SDKMAN_DIR" ]]; then
+# SDKMAN (init early so the Java fallback check below works)
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Only use Homebrew Java if SDKMAN isn't managing Java
+if ! command -v java &>/dev/null; then
   export JAVA_HOME="/opt/homebrew/opt/openjdk"
   export PATH="$JAVA_HOME/bin:$PATH"
 fi
@@ -23,7 +27,7 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-EDITOR='nvim'
+export EDITOR='nvim'
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -40,7 +44,6 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::iterm2
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
@@ -92,19 +95,11 @@ alias c='clear'
 alias vim='nvim'
 alias grep='grep --color'
 
-# Git aliases
-alias gt="git"
-alias ga="git add ."
-alias gs="git status -s"
-alias gc='git commit -m'
-alias glog='git log --oneline --graph --all'
-
 # Lazygit
 alias lg="lazygit"
 
 # thefuck alias
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
+eval $(thefuck --alias fuck fk)
 
 # ----- Bat (better cat) -----
 export BAT_THEME=tokyonight_night
@@ -142,7 +137,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-
-# SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman" 
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
