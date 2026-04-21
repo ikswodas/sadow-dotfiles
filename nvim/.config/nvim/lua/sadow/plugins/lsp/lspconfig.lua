@@ -115,6 +115,9 @@ return {
 					},
 				})
 			end,
+			["jdtls"] = function()
+				-- handled by nvim-jdtls
+			end,
 			["kotlin_language_server"] = function()
 				lspconfig["kotlin_language_server"].setup({
 					capabilities = capabilities,

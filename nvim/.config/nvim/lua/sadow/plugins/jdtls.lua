@@ -31,7 +31,7 @@ return {
 						"-jar",
 						vim.fn.expand("$MASON/share/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 						"-configuration",
-						vim.fn.expand("$MASON/share/jdtls/config_linux"), -- Adjust based on OS
+						vim.fn.expand("$MASON/share/jdtls/config_" .. (vim.fn.has("mac") == 1 and "mac" or "linux")),
 						"-data",
 						vim.fn.expand("~/.cache/jdtls-workspace/") .. vim.fn.fnamemodify(root_dir, ":p:h:t"),
 					},
