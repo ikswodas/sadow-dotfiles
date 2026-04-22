@@ -41,12 +41,13 @@ return {
 				"yamlls", -- YAML with GitHub Actions schema support
 				"bashls", -- Bash LSP
 				"sqls", -- SQL LSP
+				"marksman", -- Markdown LSP
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
+				"prettierd", -- prettier daemon (faster than prettier)
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter

@@ -45,6 +45,7 @@ return {
 				"python",
 				"haskell",
 				"kotlin",
+				"sql",
 			},
 			incremental_selection = {
 				enable = true,

@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+		"b0o/SchemaStore.nvim",
 	},
 	config = function()
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -119,6 +120,6 @@ return {
 		})
 
 		-- Enable all servers (jdtls excluded — handled by nvim-jdtls)
-		vim.lsp.enable({ "html", "clangd", "lua_ls", "pyright", "kotlin_language_server", "gradle_ls", "lemminx", "vtsls", "tailwindcss", "jsonls", "yamlls", "bashls", "sqls" })
+		vim.lsp.enable({ "html", "clangd", "lua_ls", "pyright", "kotlin_language_server", "gradle_ls", "lemminx", "vtsls", "tailwindcss", "jsonls", "yamlls", "bashls", "sqls", "marksman" })
 	end,
 }
